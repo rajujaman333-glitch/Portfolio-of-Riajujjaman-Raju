@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riajujjaman Raju | Project</title>
+    <style>
+        :root {
+            --bg-pure: #000000;
+            --panel-dark: #0a0a0a;
+            --border-neon: #00ff66;
+            --border-muted: #111111;
+            --neon-green: #00ff66;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --glow-neon: rgba(0, 255, 102, 0.15);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
+        body { background-color: var(--bg-pure); color: var(--text-main); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
+
+        nav { border-bottom: 1px solid var(--border-muted); background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; color: #fff; text-decoration: none; }
+        .logo span { color: var(--neon-green); text-shadow: 0 0 10px var(--glow-neon); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; padding: 0.5rem 0; position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--neon-green); text-shadow: 0 0 8px var(--neon-green); }
+        .nav-links a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); }
+
+        #project { padding: 8rem 0 6rem 0; min-height: 85vh; }
+        .layer-header { margin-bottom: 3.5rem; }
+        .layer-header h2 { font-size: 2.2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #fff; }
+        .layer-header h2 span { color: var(--neon-green); text-shadow: 0 0 10px var(--glow-neon); }
+        .layer-header p { color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; margin-top: 0.5rem; letter-spacing: 1px; }
+
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
+        .matrix-card { background: var(--panel-dark); border: 1px solid var(--border-muted); padding: 2.5rem; transition: all 0.3s ease; position: relative; }
+        .matrix-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--neon-green); transform: scaleX(0); transition: transform 0.3s; }
+        .matrix-card:hover { border-color: var(--border-neon); box-shadow: 0 0 15px var(--glow-neon); }
+        .matrix-card:hover::before { transform: scaleX(1); }
+        .matrix-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        .matrix-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; text-align: justify; }
+
+        .project-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+        .project-gallery.single { grid-template-columns: 1fr; }
+        .project-img { width: 100%; height: 160px; object-fit: cover; border: 1px solid var(--border-muted); filter: grayscale(40%); transition: all 0.3s; }
+        .matrix-card:hover .project-img { border-color: var(--border-neon); filter: grayscale(0%); }
+
+        footer { border-top: 1px solid var(--border-muted); padding: 1.5rem 0; background: var(--bg-pure); text-align: center; margin-top: 4rem; }
+        footer p { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="home.html" class="logo">RAJU<span>//</span></a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="project.html" class="active">Project</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <section id="project">
+            <div class="layer-header">
+                <h2>System <span>Projects</span></h2>
+                <p>[Production Logs // Active Software Code Architectures]</p>
+            </div>
+            <div class="grid-layout">
+                <div class="matrix-card">
+                    <h3>The Bondhon Project</h3>
+                    <p>An AI-powered administrative framework engineered for Bangladeshi corporations. Simplifies complex regulatory filings, legal validation processing, and document synthesis routines.</p>
+                    <div class="project-gallery">
+                        <img src="Bondhon 1.jpeg" alt="Bondhon Project Layout 1" class="project-img">
+                        <img src="Bondhon 2.jpeg" alt="Bondhon Project Layout 2" class="project-img">
+                    </div>
+                </div>
+                <div class="matrix-card">
+                    <h3>Automated Insight Email Bot</h3>
+                    <p>Architected automated capture structures that monitor high-velocity communication endpoints to extract context-aware profiles and filter business operations inquiries.</p>
+                    <div class="project-gallery single">
+                        <img src="E-Mail Bot.jpeg" alt="Automated E-Mail Bot Execution Window" class="project-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Core Operations Cluster // Connection Secure.</p>
+    </footer>
+</body>
+</html>
